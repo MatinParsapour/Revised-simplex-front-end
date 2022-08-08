@@ -1,0 +1,25 @@
+<div class="container w-100 h-100">
+  <form (ngSubmit)="submit(form)" #form="ngForm">
+    <div class="row">
+      <div class="col">
+        <div class="col-md-3 input-group flex-nowrap">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Constraints : </span>
+          <input required type="number" min="2" #constraints="ngModel" ngModel name="constraints" class="form-control" aria-describedby="addon-wrapping">
+        </div>
+        <p class="text-danger" *ngIf="constraints.invalid && constraints.touched">Number of constraints are required and should be more than 2</p>
+      </div>
+      <div class="col ms-auto">
+        <div class="col-md-3 input-group flex-nowrap">
+          <span class="input-group-text" id="inputGroup-sizing-sm">Variables : </span>
+          <input required type="number" min="3" #variables="ngModel" ngModel name="variables" class="form-control" aria-describedby="addon-wrapping">
+        </div>
+        <p class="text-danger" *ngIf="variables.invalid && variables.touched">Number of variables are required and should be more than 3</p>
+      </div>
+    </div>
+    <div class="row mt-3 justify-content-center">
+      <div class="row justify-content-center">
+        <button [disabled]="form.invalid" type="submit" class="btn btn-success">Create matrix</button>
+      </div>
+    </div>
+  </form>
+</div>
