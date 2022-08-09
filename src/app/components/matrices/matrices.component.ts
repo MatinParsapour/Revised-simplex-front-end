@@ -7,6 +7,8 @@ import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '
   styleUrls: ['./matrices.component.css']
 })
 export class MatricesComponent implements OnInit {
+  @Input('constraints') constraints!: number;
+  @Input('variables') variables!: number;
 
   constructor() { }
 
