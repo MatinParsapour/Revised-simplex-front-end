@@ -31,6 +31,13 @@ export class MatricesComponent implements OnInit {
     console.log((<FormArray>this.matrices.get('constraintsValues')).controls);
     console.log((<FormArray>this.matrices.get('resultValues')).controls);
   }
+  
+  addFormControlToList(name: string, length: number) {
+    for (let i = 0; i < length; i++) {
+      (<FormArray>this.matrices.get(name)).push(
+        new FormControl(0, [Validators.required, Validators.min(0), Validators.max(9)])
+      );
+    }
   }
 
 }
