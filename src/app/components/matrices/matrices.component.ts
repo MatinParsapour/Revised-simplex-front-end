@@ -20,6 +20,9 @@ export class MatricesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  getArray(name: string): Array<any> {
+    return (<FormArray>this.matrices.get(name)).controls;
+  }
   }
 
 }
