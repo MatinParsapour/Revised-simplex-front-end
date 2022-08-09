@@ -16,10 +16,6 @@ export class MainComponent implements OnInit {
     this.route.queryParams.subscribe((queryParams: Params) => {
       this.constraints = +queryParams['constraints'];
       this.variables = +queryParams['variables'];
-      console.log({
-        'Constraints ': this.constraints,
-        'Variables: ': this.variables,
-      });
     });
   }
 
