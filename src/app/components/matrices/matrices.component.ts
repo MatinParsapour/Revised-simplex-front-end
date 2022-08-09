@@ -43,4 +43,9 @@ export class MatricesComponent implements OnInit {
   getMatrix(name: string, row: number): any {    
     return (<FormArray>this.matrices.get(name)).controls[row].value;
   }
+
+  fakeArray(length: number): Array<any> {
+    return new Array(length);
+  }
+
 }
