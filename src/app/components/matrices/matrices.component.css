@@ -1,0 +1,24 @@
+.variable-value {
+  width: 60px !important;
+  margin: 0 5px 0 5px;
+  flex-grow: 1 !important;
+  height: 50px;
+}
+
+.form-control {
+  flex: unset;
+}
+
+.column {
+    flex-grow: 1;
+}
+
+.results {
+  flex-direction: column;
+  margin: unset !important;
+}
+
+.results>input {
+  border-radius: 5px !important;
+  margin: unset;
+}
