@@ -48,4 +48,19 @@ export class MatricesComponent implements OnInit {
     return new Array(length);
   }
 
+  addFormControlToMatrix(name: string, rows: number, columns: number) {
+    for (let row = 0; row < rows; row++) {
+      const array: AbstractControl[] = new Array();
+      for (let column = 0; column < columns; column++) {
+        array.push(
+          new FormControl(0, [
+            Validators.required,
+            Validators.min(0),
+            Validators.max(9),
+          ])
+        );
+      }
+      (<FormArray>this.matrices.get(name)).push(new FormControl(array))
+    }    
+  }
 }
