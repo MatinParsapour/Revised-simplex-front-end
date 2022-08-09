@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { MainComponent } from './components/main/main.component';
 import { UserInputsComponent } from './components/user-inputs/user-inputs.component';
 import { MatricesComponent } from './components/matrices/matrices.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
