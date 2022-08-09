@@ -20,6 +20,11 @@ export class MatricesComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.addFormControlToList('targetFunctionValues', this.variables);
+    this.addFormControlToMatrix('constraintsValues', this.constraints, this.variables);
+    this.addFormControlToList('resultValues', this.constraints);    
+  }
+
   getArray(name: string): Array<any> {
     return (<FormArray>this.matrices.get(name)).controls;
   }
