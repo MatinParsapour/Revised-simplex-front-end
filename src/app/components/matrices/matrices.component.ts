@@ -9,6 +9,7 @@ import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '
 export class MatricesComponent implements OnInit {
   @Input('constraints') constraints!: number;
   @Input('variables') variables!: number;
+  matrices!: FormGroup;
 
   constructor() { }
 
