@@ -23,6 +23,14 @@ export class MatricesComponent implements OnInit {
   getArray(name: string): Array<any> {
     return (<FormArray>this.matrices.get(name)).controls;
   }
+
+  submit() {
+    console.log(
+      (<FormArray>this.matrices.get('targetFunctionValues')).controls
+    );
+    console.log((<FormArray>this.matrices.get('constraintsValues')).controls);
+    console.log((<FormArray>this.matrices.get('resultValues')).controls);
+  }
   }
 
 }
