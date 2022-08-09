@@ -11,7 +11,13 @@ export class MatricesComponent implements OnInit {
   @Input('variables') variables!: number;
   matrices!: FormGroup;
 
-  constructor() { }
+  constructor() {
+    this.matrices = new FormGroup({
+      targetFunctionValues: new FormArray([]),
+      constraintsValues: new FormArray([]),
+      resultValues: new FormArray([]),
+    });
+  }
 
   ngOnInit(): void {
   }
