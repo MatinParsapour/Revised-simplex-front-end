@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -11,7 +12,7 @@ export class MatricesComponent implements OnInit {
   @Input('variables') variables!: number;
   matrices!: FormGroup;
 
-  constructor() {
+  constructor(private router: Router) {
     this.matrices = new FormGroup({
       targetFunctionValues: new FormArray([]),
       constraintsValues: new FormArray([]),
@@ -35,6 +36,7 @@ export class MatricesComponent implements OnInit {
     );
     console.log((<FormArray>this.matrices.get('constraintsValues')).controls);
     console.log((<FormArray>this.matrices.get('resultValues')).controls);
+    this.router.navigate(['result'])
   }
   
   addFormControlToList(name: string, length: number) {
