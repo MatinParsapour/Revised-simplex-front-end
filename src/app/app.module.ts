@@ -8,14 +8,16 @@ import { UserInputsComponent } from './components/user-inputs/user-inputs.compon
 import { MatricesComponent } from './components/matrices/matrices.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import { ImportFileComponent } from './components/import-file/import-file.component'
+import { ImportFileComponent } from './components/import-file/import-file.component';
+import { ResultComponent } from './components/result/result.component'
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
     UserInputsComponent,
     MatricesComponent,
-    ImportFileComponent
+    ImportFileComponent,
+    ResultComponent
   ],
   imports: [
     BrowserModule,
