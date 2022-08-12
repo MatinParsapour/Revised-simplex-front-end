@@ -1,1 +1,10 @@
-<p>import-file works!</p>
+<div class="container mb-3 w-100 h-100">
+  <div class="row justify-content-center">
+    <div class="input-group">
+      <input type="file" class="form-control" (change)="importFile($event)" id="inputGroupFile04"
+        aria-describedby="inputGroupFileAddon04" aria-label="Upload">
+      <button class="btn btn-outline-secondary" (click)="uploadFile()" type="button"
+        id="inputGroupFileAddon04">Upload</button>
+    </div>
+  </div>
+</div>
