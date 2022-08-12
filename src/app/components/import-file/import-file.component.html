@@ -3,7 +3,7 @@
     <div class="input-group">
       <input type="file" class="form-control" (change)="importFile($event)" id="inputGroupFile04"
         aria-describedby="inputGroupFileAddon04" aria-label="Upload">
-      <button class="btn btn-outline-secondary" (click)="uploadFile()" type="button"
+      <button [disabled]="!file" class="btn btn-outline-secondary" (click)="uploadFile()" type="button"
         id="inputGroupFileAddon04">Upload</button>
     </div>
   </div>
