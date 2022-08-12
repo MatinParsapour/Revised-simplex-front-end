@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { FileService } from './../../services/file/file.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpErrorResponse } from '@angular/common/http';
@@ -5,39 +6,33 @@ import { HttpErrorResponse } from '@angular/common/http';
 @Component({
   selector: 'app-import-file',
   templateUrl: './import-file.component.html',
-  styleUrls: ['./import-file.component.css']
+  styleUrls: ['./import-file.component.css'],
 })
 export class ImportFileComponent implements OnInit {
-  file!: File
-  status!: string;
-  message!: string;
+  file!: File;
 
-  constructor(private fileService: FileService) { }
+  constructor(private fileService: FileService, private router: Router) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   importFile(event: any) {
     this.file = event.target.files[0];
   }
 
-  uploadFile(){
+  uploadFile() {
     const formData = this.createFormData(this.file);
-    this.fileService.post("file/import-excel", formData).subscribe(
-      response => {
-        status = "Ok",
-        this.message = "Your file uploaded, wait to calculate"
-      },
+    this.fileService.post('file/import-excel', formData).subscribe(
+      (response) => {},
       (error: HttpErrorResponse) => {
         console.log(error);
       }
-    )    
+    );
+    this.router.navigate(['result']);
   }
 
   private createFormData(file: File): FormData {
-    const formData = new FormData;
-    formData.append("file", file)
+    const formData = new FormData();
+    formData.append('file', file);
     return formData;
   }
-
 }
