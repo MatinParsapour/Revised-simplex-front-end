@@ -13,8 +13,7 @@
         <div class="column" formArrayName="constraintsValues">
           <div class="row" *ngFor="let constraint of getArray('constraintsValues');let i = index"
             [formGroup]="constraint">
-            <input *ngFor="let variable of getMatrix('constraintsValues', i); let j = index" type="number" min="0"
-              max="9" class="form-control variable-value" [formControl]="variable" aria-label="Sizing example input"
+            <input *ngFor="let variable of getMatrix('constraintsValues', i); let j = index" type="number" class="form-control variable-value" [formControl]="variable" aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-default">
           </div>
         </div>
