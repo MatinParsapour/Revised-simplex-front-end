@@ -32,11 +32,21 @@ export class MatricesComponent implements OnInit {
   }
 
   submit() {
-    console.log(
-      (<FormArray>this.matrices.get('targetFunctionValues')).controls
-    );
-    console.log((<FormArray>this.matrices.get('constraintsValues')).controls);
-    console.log((<FormArray>this.matrices.get('resultValues')).controls);
+    // console.log(
+    //   (<FormArray>this.matrices.get('targetFunctionValues')).value
+    // );
+    // console.log((<FormArray>this.matrices.get('constraintsValues')).value);
+    // console.log((<FormArray>this.matrices.get('resultValues')).value);
+    console.log(this.matrices.value);
+    this.http.post("http://localhost:8080/value/send-data", this.matrices.value).subscribe(
+      response => {
+        console.log(response);
+      },
+      (error: HttpErrorResponse) => {
+        console.log(error);
+        
+      }
+    )
     this.router.navigate(['result'])
   }
   
