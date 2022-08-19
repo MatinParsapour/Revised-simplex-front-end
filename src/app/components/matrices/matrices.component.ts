@@ -1,3 +1,4 @@
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Router } from '@angular/router';
 import { Component, Input, OnInit } from '@angular/core';
 import { AbstractControl, FormArray, FormControl, FormGroup, Validators } from '@angular/forms';
@@ -12,7 +13,7 @@ export class MatricesComponent implements OnInit {
   @Input('variables') variables!: number;
   matrices!: FormGroup;
 
-  constructor(private router: Router) {
+  constructor(private router: Router, private http: HttpClient) {
     this.matrices = new FormGroup({
       targetFunctionValues: new FormArray([]),
       constraintsValues: new FormArray([]),
