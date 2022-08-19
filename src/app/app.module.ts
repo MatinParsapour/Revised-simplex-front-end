@@ -24,6 +24,7 @@ import { ResultComponent } from './components/result/result.component'
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
+    HttpClientModule,
     HttpClientModule
   ],
   providers: [],
