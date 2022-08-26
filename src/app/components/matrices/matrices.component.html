@@ -3,8 +3,9 @@
     <div class="row">
       <div class="input-group mb-3" formArrayName="targetFunctionValues">
         <span class="input-group-text" id="inputGroup-sizing-default">Max Z = </span>
-        <input *ngFor="let variable of fakeArray(variables); let i = index" type="number" class="form-control variable-value"
-          [formControlName]="i" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+        <input *ngFor="let variable of fakeArray(variables); let i = index" type="number"
+          class="form-control variable-value" [formControlName]="i" aria-label="Sizing example input"
+          aria-describedby="inputGroup-sizing-default">
       </div>
     </div>
     <div class="row">
@@ -13,18 +14,30 @@
         <div class="column" formArrayName="constraintsValues">
           <div class="row" *ngFor="let constraint of getArray('constraintsValues');let i = index"
             [formGroup]="constraint">
-            <input *ngFor="let variable of getMatrix('constraintsValues', i); let j = index" type="number" class="form-control variable-value" [formControl]="variable" aria-label="Sizing example input"
+            <input *ngFor="let variable of getMatrix('constraintsValues', i); let j = index" type="number"
+              class="form-control variable-value" [formControl]="variable" aria-label="Sizing example input"
               aria-describedby="inputGroup-sizing-default">
           </div>
         </div>
         <span class="input-group-text" id="inputGroup-sizing-default">=</span>
         <div class="row">
           <div class="input-group mb-3 results" formArrayName="resultValues">
-            <input *ngFor="let constraint of fakeArray(constraints); let i = index" type="number" class="form-control variable-value"
-            [formControlName]="i" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+            <input *ngFor="let constraint of fakeArray(constraints); let i = index" type="number"
+              class="form-control variable-value" [formControlName]="i" aria-label="Sizing example input"
+              aria-describedby="inputGroup-sizing-default">
           </div>
         </div>
       </div>
+    </div>
+    <div class="row input-group">
+      <select class="form-select m-3" multiple formControlName="basicVariables">
+        <option disabled>Basic variables columns</option>
+        <option *ngFor="let variable of fakeArray(variables); let i = index" [value]="i">{{i + 1}}</option>
+      </select>
+      <select class="form-select m-3" multiple formControlName="nonBasicVariables">
+        <option disabled>Non basic variables columns</option>
+        <option *ngFor="let variable of fakeArray(variables);let i = index" [value]="i">{{i + 1}}</option>
+      </select>
     </div>
     <div class="row mt-3 justify-content-center">
       <div class="row justify-content-center">
