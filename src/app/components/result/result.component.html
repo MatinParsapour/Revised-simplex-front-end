@@ -9,13 +9,17 @@
     <div class="m-3 card" style="width: 18rem;">
       <div class="card-body">
         <h5 class="card-title">Basic variables</h5>
-        <p class="card-text">{{basicVariables}}</p>
+        <li *ngFor="let basicVariable of basicVariables | keyvalue">
+          {{basicVariable.key}} --> {{basicVariable.value}}
+        </li>
       </div>
     </div>
     <div class="m-3 card" style="width: 18rem;">
       <div class="card-body">
-        <h5 class="card-title">Non basic variables values</h5>
-        <p class="card-text">{{nonBasicVariables}}</p>
+        <h5 class="card-title">Non basic variables</h5>
+        <li *ngFor="let nonBasicVariable of nonBasicVariables | keyvalue">
+          {{nonBasicVariable.key}} --> {{nonBasicVariable.value}}
+        </li>
       </div>
     </div>
     <div class="card m-3" style="width: 18rem;">
