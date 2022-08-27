@@ -22,12 +22,13 @@ export class ImportFileComponent implements OnInit {
   uploadFile() {
     const formData = this.createFormData(this.file);
     this.fileService.post('file/import-excel', formData).subscribe(
-      (response) => {},
+      (response) => {
+        this.router.navigate(['result']);
+      },
       (error: HttpErrorResponse) => {
         console.log(error);
       }
     );
-    this.router.navigate(['result']);
   }
 
   private createFormData(file: File): FormData {
